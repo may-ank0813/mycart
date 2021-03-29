@@ -25,7 +25,7 @@ SECRET_KEY = 'w1my4wepmw!ew$1l_jo$86l_qyfkl+vu+2hygz!f9#n+#_g=@0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','ccmsystem.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','my-cart1.herokuapp.com/']
 
 
 # Application definition
