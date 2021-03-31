@@ -2,6 +2,10 @@
 {% block title %}Shop{% endblock %}
 
 {% block css %}
+        body
+           {
+            background-color: rgb(225,225,225);
+           }
         .card {
             display: inline-block;
             margin: auto ;
@@ -56,11 +60,11 @@
                                           <div class="card-body">
                                              <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
                                                 <p id="pricepr{{i.id}}"><b>Rs </b>{{i.price}}</p>
-                                                <p class="card-text">{{i.desc|slice:"0:53"}}...</p>
-                                            <span id="divpr{{i.id}}" class="divpr">
-                                                <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
-                                            </span>
-                                              <a href="/shop/products/{{i.id}}"><button id="qv{{i.id}}" class="mt-2 btn btn-primary cart">QuickView</button></a>
+                                                <p class="card-text">{{i.desc|slice:"0:20"}}...</p>
+                                              <span style="display:flex; "  id="divpr{{i.id}}" class="divpr" >
+                                                <button style="font-size: 12px;" id="pr{{i.id}}" class="btn btn-primary cart mr-1">Add To Cart</button>
+                                                <a href="/shop/products/{{i.id}}"><button style="font-size: 12px;"  id="qv{{i.id}}" class="btn btn-primary cart">QuickView</button></a>
+                                              </span>
                                           </div>
                                     </div>
                                 </div>
@@ -95,7 +99,6 @@
 {% block js %}
 
 <script>
-
 // adding elements in cart using class name 'cart' //
 if(localStorage.getItem('cart') == null)
 {
@@ -130,9 +133,7 @@ $('.divpr').on('click', 'button.cart', function()
                 cart[idstr] = [qty, name,price];
                  }
              updateCart(idstr); // Calling the function
-}); 
-
-
+});
 //Add Popover to cart
 $('#popcart').popover();
 updatePopover(cart);

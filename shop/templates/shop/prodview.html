@@ -1,6 +1,8 @@
 {% extends 'shop/basic.html' %}
 {% block title %}{{product.product_name}}{% endblock %}
+{%block css%}
 
+{% endblock %}
 {%block body %}
 
    <div class="container">
@@ -25,7 +27,22 @@
 {% block js %}
 
 <script>
-        console.log('working')
+// adding elements in cart using class name 'cart' //
+if(localStorage.getItem('cart') == null)
+{
+           var cart={};
+}
+else{
+           cart= JSON.parse(localStorage.getItem('cart'));
+           a= 0;
+           for (var item in cart)
+           {
+                   a = a + cart[item][0];
+           }
+           // here cart is ID (from basic.html) //
+           document.getElementById('cart').innerHTML = a;
+}
+console.log('working')
 if(localStorage.getItem('cart') == null)
 {
 var cart={};

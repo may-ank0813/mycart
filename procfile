@@ -1,1 +1,1 @@
-web: gunicorn my-cart1.wsgi --log-file -
+web: gunicorn MyCart.wsgi --log-file -

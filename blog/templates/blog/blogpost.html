@@ -21,7 +21,7 @@
         <aside class="col-md-4 blog-sidebar">
             <div class="p-4 mb-3 bg-light rounded">
                 <h4 class="font-italic">About</h4>
-                <p class="mb-0">My Awesome Cart is an <em>ecommerce website</em>. You can use it for buying and searching items online. </p>
+                <p class="mb-0">MyCart is an <em>ecommerce website</em>. You can use it for buying and searching items online. </p>
             </div>
             <div class="p-4">
                 <h4 class="font-italic">Contact Us On: </h4>
@@ -35,3 +35,22 @@
     </div>
 </div>
 {%endblock%}
+{% block js %}
+<script>
+    // adding elements in cart using class name 'cart' //
+if(localStorage.getItem('cart') == null)
+{
+           var cart={};
+}
+else{
+           cart= JSON.parse(localStorage.getItem('cart'));
+           a= 0;
+           for (var item in cart)
+           {
+                   a = a + cart[item][0];
+           }
+           // here cart is ID (from basic.html) //
+           document.getElementById('cart').innerHTML = a;
+}
+</script>
+{% endblock %}

@@ -1,5 +1,8 @@
 {% extends 'shop/basic.html' %}
 {% block title %} About Us{% endblock %}
+{%block css%}
+
+{% endblock %}
 {% block body %}
 
 
@@ -8,8 +11,8 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">My Cart</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <h1 class="display-3">A JOURNEY THAT STARTED WITH A SINGLE BOOK</h1>
+      <p>MyCart is an Indian e-commerce company, headquartered in Bangalore, Karnataka, India, and registered in Singapore.The company initially focused on online book sales before expanding into other product categories such as consumer electronics, fashion, home essentials, groceries, and lifestyle products.</p>
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
     </div>
   </div>
@@ -17,19 +20,19 @@
   <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <div class="col-md-4 p-2">
+        <h2>Leadership Principles</h2>
+        <p>We hold ourselves and each other accountable for demonstrating the Leadership Principles through our actions every day. Our Leadership Principles describe how Amazon does business, how leaders lead, and how we keep the customer at the center of our decisions.</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <div class="col-md-4" p-2>
+        <h2>Our Positions</h2>
+        <p>We created this page to provide customers, investors, employees views on certain issues. While our positions are carefully considered and deeply held , there is much room for healthy debate and differing opinions. We hope being clear about our position is helpful.</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      <div class="col-md-4 p-2">
+        <h2>Our Core Values</h2>
+        <p>At MyCart, it is our core values that guide all aspects of our business and the way we conduct ourselves. We strive to do the right thing, in the right way at all times. Here’s what being a Flipster is all about</p>
         <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
       </div>
     </div>
@@ -48,4 +51,24 @@
 </html>
 
 
+{% endblock %}
+
+{% block js %}
+<script>
+  // adding elements in cart using class name 'cart' //
+if(localStorage.getItem('cart') == null)
+{
+           var cart={};
+}
+else{
+           cart= JSON.parse(localStorage.getItem('cart'));
+           a= 0;
+           for (var item in cart)
+           {
+                   a = a + cart[item][0];
+           }
+           // here cart is ID (from basic.html) //
+           document.getElementById('cart').innerHTML = a;
+}
+</script>
 {% endblock %}

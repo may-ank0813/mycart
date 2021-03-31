@@ -1,5 +1,8 @@
 {% extends 'shop/basic.html' %}
 {% block title %} MyCart Tracker{% endblock %}
+{%block css%}
+
+{% endblock %}
 {% block body %}
 <div class="container">
     <div class="col my-4">
@@ -47,6 +50,22 @@
 {% endblock %}
 {% block js %}
 <script>
+// adding elements in cart using class name 'cart' //
+if(localStorage.getItem('cart') == null)
+{
+           var cart={};
+}
+else{
+           cart= JSON.parse(localStorage.getItem('cart'));
+           a= 0;
+           for (var item in cart)
+           {
+                   a = a + cart[item][0];
+           }
+           // here cart is ID (from basic.html) //
+           document.getElementById('cart').innerHTML = a;
+}
+
 $('#trackerForm').submit(function(event) {
     $('#items').empty();
     var formData = {

@@ -13,7 +13,12 @@
 
     <title>{%block title%} {% endblock %}</title>
     <style>
-        {%block css %} {% endblock %}
+         body{
+               background-color: rgb(225,225,225);
+             }
+        {%block css %}
+
+        {% endblock %}
     </style>
     <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="lPfmdTRg"></script>
@@ -52,7 +57,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
 
-            <button type="button" id = "popcart"class="btn btn-secondary mx-2" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            <button type="button" id = "popcart" class="btn btn-secondary mx-2" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
                    Cart (<span id="cart">0</span>)
             </button>
         </div>

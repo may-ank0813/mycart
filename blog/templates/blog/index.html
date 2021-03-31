@@ -6,9 +6,8 @@
    <div class="container my-4">
     <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-          <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-          <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+          <h1 class="display-4 font-italic">MyCart Blog</h1>
+          <p class="lead my-3">Visit the MyCart News Blog for details of all the major announcements from re:Invent 2020.</p>
         </div>
       </div>
    </div>
@@ -41,5 +40,21 @@
   </div>
 {% endblock %}
 {% block js %}
-
+<script>
+    // adding elements in cart using class name 'cart' //
+if(localStorage.getItem('cart') == null)
+{
+           var cart={};
+}
+else{
+           cart= JSON.parse(localStorage.getItem('cart'));
+           a= 0;
+           for (var item in cart)
+           {
+                   a = a + cart[item][0];
+           }
+           // here cart is ID (from basic.html) //
+           document.getElementById('cart').innerHTML = a;
+}
+</script>
 {% endblock %}
